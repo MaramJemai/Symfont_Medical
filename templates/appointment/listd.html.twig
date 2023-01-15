@@ -1,0 +1,71 @@
+{% extends 'navbar2.html.twig' %}
+{% block title %}{{'Insurance list' | trans }}{% endblock %}
+{% block body %}
+ <div class="container">
+ <!--h3>Utilisateur connecte :{#{ ema }#}</h3>  
+ <div class="alert alert-primary" role="alert">
+   <strong>{#{ msg }#}</strong>
+ </div-->
+ <h1>{{'Appointment Requests' | trans }}</h1>
+  <table class="table table-striped ">
+  <thead>
+    <tr>
+            <th scope="col">ID</th>
+      <th scope="col">{{'PATIENT FIRST NAME' | trans }}</th>
+      <th scope="col">{{'PATIENT LAST NAME' | trans }}</th>
+            <th scope="col">DATE</th>
+                  <th scope="col">{{'STATE' | trans }}</th>
+                  <th scope="col"> ACTIONS </th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for a in appointments %}
+    <tr>
+      <th scope="row">{{ a.id }}</th>
+      <td>{{ a.patient.getFirstName()}}</td>
+     <td>{{ a.patient.getLastName() }}</td>
+      <td>{{ a.date | date()}}</td>
+      <td>{{ a.state }}</td>
+      <td><a class="btn btn-success" href="{{ path("app_appointment_accept" ,{'id':a.id} ) }}"> {{'ACCEPT' | trans }}</a> &nbsp
+      <a class="btn btn-danger" href="{{ path("app_appointment_delete" ,{'id':a.id} ) }}">{{'CANCEL' | trans }} </a>
+      </td>
+    </tr>
+     {% endfor %}
+     </table>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+ <h1>{{'Appointment List' | trans }}</h1>
+  <table class="table table-striped ">
+  <thead>
+    <tr>
+            <th scope="col">ID</th>
+      <th scope="col">{{'PATIENT FIRST NAME' | trans }}</th>
+      <th scope="col">{{'PATIENT LAST NAME' | trans }}</th>
+            <th scope="col">DATE</th>
+                  <th scope="col">{{'STATE' | trans }}</th>
+                  <th scope="col"> ACTIONS </th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for a in appointments1 %}
+    <tr>
+      <th scope="row">{{ a.id }}</th>
+      <td>{{ a.patient.getFirstName()}}</td>
+     <td>{{ a.patient.getLastName() }}</td>
+      <td>{{ a.date | date()}}</td>
+      <td>{{ a.state }}</td>
+      <td><a class="btn btn-danger" href="{{ path("app_appointment_delete" ,{'id':a.id} ) }}"> {{'CANCEL' | trans }} </a>
+      </td>
+    </tr>
+     {% endfor %}
+      </tbody>
+</table>
+
+</div>
+
+
+{% endblock %}
+

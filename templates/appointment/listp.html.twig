@@ -1,0 +1,66 @@
+{% extends 'navbar1.html.twig' %}
+{% block body %}
+ <div class="container">
+ <!--h3>Utilisateur connecte :{#{ ema }#}</h3>  
+ <div class="alert alert-primary" role="alert">
+   <strong>{#{ msg }#}</strong>
+ </div-->
+ <h1> {{'Pending Appointments' | trans }}</h1>
+  <table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">{{'DOCTOR FIRST NAME' | trans }}</th>
+      <th scope="col">{{'DOCTOR LAST NAME' | trans }}</th>
+            <th scope="col">DATE</th>
+                  <th scope="col">{{'STATE' | trans }}</th>
+                  <th scope="col"></th>
+ </tr>
+  </thead>
+  <tbody>
+   {% for a in appointments %}
+    <tr>
+      <th scope="row">{{ a.id }}</th>
+      <td>{{ a.doctor.getFirstName()}}</td>
+     <td>{{ a.doctor.getLastName()}}</td>
+      <td>{{ a.date | date()}}</td>
+      <td>{{ a.state }}</td>
+      <td><a class="btn btn-danger" href="{#{ path("app_appointment_delete" ,{'id':a.id} ) }#}"> {{'cancel' | trans }}</a>
+      </td>
+    </tr>
+     {% endfor %}
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <h1> {{'Accepted Appointments' | trans }}</h1>
+  <table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">{{'DOCTOR FIRST NAME' | trans }}</th>
+      <th scope="col">{{'DOCTOR LAST NAME' | trans }}</th>
+            <th scope="col">DATE</th>
+                  <th scope="col">{{'STATE' | trans }}</th>
+                  <th scope="col"></th>
+ </tr>
+  </thead>
+  <tbody>
+   {% for a in appointments1 %}
+    <tr>
+      <th scope="row">{{ a.id }}</th>
+      <td>{{ a.doctor.getFirstName()}}</td>
+     <td>{{ a.doctor.getLastName()}}</td>
+      <td>{{ a.date | date()}}</td>
+      <td>{{ a.state }}</td>
+      <td><a class="btn btn-danger" href="{{ path("app_appointment_delete" ,{'id':a.id} ) }}"> {{'cancel' | trans }}</a>
+      </td>
+    </tr>
+     {% endfor %}
+      </tbody>
+</table>
+</div>
+{% endblock %}

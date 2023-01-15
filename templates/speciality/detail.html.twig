@@ -1,0 +1,25 @@
+{% extends 'base1.html.twig' %}
+{% block title %}{{'speciality detail' | trans }}{% endblock %}
+{% block body %}
+ <div class="container">
+ <!--h3>Utilisateur connecte :{#{ ema }#}</h3>  
+ <div class="alert alert-primary" role="alert">
+   <strong>{#{ msg }#}</strong>
+ </div-->
+ <h1>{{'Speciality detail' | trans }}</h1>
+  <table class="table table-striped ">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">{{'NAME' | trans }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ speciality.id }}</th>
+      <td>{{ speciality.name }}</td>
+    </tr>
+      </tbody>
+</table>
+</div>
+{% endblock %}

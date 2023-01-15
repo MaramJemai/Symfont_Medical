@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+<nav>
+  <ul>
+    <li>
+      <a href="{{ path("app_register",{'play':'doctor'}) }}">{{'Sing up as a doctor' | trans }}</a>
+    </li>
+    <li>
+      <a href="{{ path("app_register",{'play':'patient'}) }}"> {{'Sign up as a patient' | trans }}</a>
+    </li>
+    <li>
+      <a href="{{ path("app_login") }}">{{'sign in' | trans }}</a>
+    </li>
+  </ul>
+</nav>
+{% block body %}
+{% endblock %}
+<style>
+.footer-basic {
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+.footer-basic li {
+  padding:0 10px;
+}
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+.footer-basic ul a:hover {
+  opacity:1;
+}
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+html {
+  height:100%;
+  background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+}
+nav {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+</style>
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">{{'Home' | trans }}</a></li>
+                <li class="list-inline-item"><a href="#">{{'Services' | trans }}</a></li>
+                <li class="list-inline-item"><a href="#">{{'About' | trans }}</a></li>
+                <li class="list-inline-item"><a href="#">{{'Terms' | trans }}</a></li>
+                <li class="list-inline-item"><a href="#">{{'Privacy Policy' | trans }}</a></li>
+            </ul>
+            <p class="copyright">Get Better © 2022</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>

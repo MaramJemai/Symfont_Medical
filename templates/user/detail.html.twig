@@ -1,0 +1,36 @@
+{% extends 'base1.html.twig' %}
+{% block title %}{{'user detail' | trans }}{% endblock %}
+{% block body %}
+ <div class="container">
+ <!--h3>Utilisateur connecte :{#{ ema }#}</h3>  
+ <div class="alert alert-primary" role="alert">
+   <strong>{#{ msg }#}</strong>
+ </div-->
+ <h1>{{'user detail' | trans }}</h1>
+  <table class="table table-striped ">
+  <thead>
+    <tr>
+    <th scope="col">{{'First name' | trans }}</th>
+    <th scope="col">{{'Last name' | trans }}</th>
+      <th scope="col">{{'Consult fees' | trans }}</th>
+      <th scope="col">{{'Speciality' | trans }}</th>
+      <th scope="col">{{'Insurance' | trans }}</th>
+      <th scope="col">{{'Governorate' | trans }}</th>
+            <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ user.first_name }}</td>
+     <td>{{ user.last_name }}</td>
+      <td>{{ user.consult_fees }}</td>
+      <td>{{ speciality.name }}</td>
+      <td>{{ insurance.name }}</td>
+      <td>{{ user.governorate }}</td>
+      <td>
+            <a class="btn btn-primary" href="{{ path("app_appointment_book",{'idd':user.id}) }}"> {{'Boock an appointment' | trans }}</a></td>
+    </tr>
+      </tbody>
+</table>
+</div>
+{% endblock %}
